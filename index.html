@@ -861,6 +861,8 @@
     </div>
   </footer>
 
+  <iframe name="hidden-iframe" style="display:none;"></iframe>
+
   <script>
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzpmlLir1YRQ-tW0Djh3_qoYPgvlUDvCoDVt4hutfyOdlwO-IkwfOS4UqcE1EIxjVV2kw/exec';
 
@@ -875,23 +877,31 @@
       btn.disabled = true;
       btn.textContent = 'Subscribing…';
 
-      const body = new URLSearchParams({ email: input.value, source: formId });
+      // Build a hidden form and submit it into the hidden iframe — bypasses CORS/redirect issues
+      const tempForm = document.createElement('form');
+      tempForm.method = 'POST';
+      tempForm.action = SCRIPT_URL;
+      tempForm.target = 'hidden-iframe';
+      tempForm.style.display = 'none';
 
-      fetch(SCRIPT_URL, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: body
-      })
-      .then(() => {
+      const emailField = document.createElement('input');
+      emailField.name = 'email';
+      emailField.value = input.value;
+
+      const sourceField = document.createElement('input');
+      sourceField.name = 'source';
+      sourceField.value = formId;
+
+      tempForm.appendChild(emailField);
+      tempForm.appendChild(sourceField);
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+      document.body.removeChild(tempForm);
+
+      setTimeout(() => {
         form.style.display = 'none';
         successEl.style.display = 'block';
-      })
-      .catch(() => {
-        btn.disabled = false;
-        btn.textContent = 'Try again';
-        input.disabled = false;
-        alert('Something went wrong. Please try again.');
-      });
+      }, 800);
     }
   </script>
 
