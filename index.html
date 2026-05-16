@@ -875,11 +875,12 @@
       btn.disabled = true;
       btn.textContent = 'Subscribing…';
 
+      const body = new URLSearchParams({ email: input.value, source: formId });
+
       fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: input.value, source: formId })
+        body: body
       })
       .then(() => {
         form.style.display = 'none';
