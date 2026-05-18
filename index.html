@@ -543,6 +543,270 @@
       margin: 0 auto;
     }
 
+    /* ─── Content Brewer HQ Product Section ─── */
+    .products-section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .product-card {
+      background: #0c1220;
+      border-radius: 24px;
+      padding: 56px 48px 48px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-card::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(20,184,166,.13) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .product-card::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -60px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(99,102,241,.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .cbhq-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: #14b8a6;
+      background: rgba(20,184,166,.12);
+      border: 1px solid rgba(20,184,166,.3);
+      padding: 5px 13px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+
+    .cbhq-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #14b8a6;
+      animation: cbpulse 2s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes cbpulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: .45; transform: scale(.8); }
+    }
+
+    .founding-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(99,102,241,.14);
+      border: 1px solid rgba(99,102,241,.25);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: #a5b4fc;
+      margin-bottom: 32px;
+    }
+
+    .product-header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
+      margin-bottom: 48px;
+    }
+
+    .product-name {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800;
+      letter-spacing: -.03em;
+      color: #ffffff;
+      margin-bottom: 12px;
+      line-height: 1.1;
+    }
+
+    .product-tagline {
+      font-size: 16px;
+      color: rgba(255,255,255,.55);
+      max-width: 520px;
+      line-height: 1.65;
+    }
+
+    .platform-badges {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: rgba(255,255,255,.55);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      padding: 5px 13px;
+      border-radius: 999px;
+    }
+
+    .product-cta-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+      padding-top: 4px;
+    }
+
+    .btn-teal {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0d9488;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: -.01em;
+      border: none;
+      cursor: pointer;
+      transition: background .15s, transform .1s;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-teal:hover { background: #0f766e; transform: translateY(-1px); }
+
+    .product-no-cc {
+      font-size: 11.5px;
+      color: rgba(255,255,255,.3);
+      text-align: right;
+    }
+
+    /* Workflow */
+    .workflow-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.25);
+      margin-bottom: 24px;
+    }
+
+    .workflow-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      position: relative;
+      margin-bottom: 40px;
+    }
+
+    .workflow-steps::before {
+      content: '';
+      position: absolute;
+      top: 19px;
+      left: calc(12.5% + 8px);
+      right: calc(12.5% + 8px);
+      height: 1px;
+      background: linear-gradient(to right,
+        rgba(20,184,166,.5) 0%,
+        rgba(20,184,166,.2) 100%);
+      z-index: 0;
+    }
+
+    .wf-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 0 14px;
+    }
+
+    .wf-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #0c1220;
+      border: 1.5px solid rgba(20,184,166,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 800;
+      color: #14b8a6;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+
+    .wf-icon {
+      font-size: 22px;
+      margin-bottom: 10px;
+      line-height: 1;
+    }
+
+    .wf-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 7px;
+      line-height: 1.35;
+    }
+
+    .wf-desc {
+      font-size: 12.5px;
+      color: rgba(255,255,255,.38);
+      line-height: 1.55;
+    }
+
+    /* Feature pills */
+    .product-features-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-top: 28px;
+      border-top: 1px solid rgba(255,255,255,.07);
+    }
+
+    .product-feature-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 12.5px;
+      font-weight: 500;
+      color: rgba(255,255,255,.42);
+      padding: 4px 0;
+    }
+
+    .product-feature-pill::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #14b8a6;
+      opacity: .7;
+      flex-shrink: 0;
+    }
+
     /* ─── Mobile ─── */
     @media (max-width: 768px) {
       .hero { padding: 64px 0 56px; }
@@ -575,12 +839,48 @@
       .footer-inner { flex-direction: column; align-items: flex-start; }
 
       .proof-inner { gap: 20px; }
+
+      .product-card { padding: 36px 24px 32px; }
+
+      .product-header {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .product-cta-wrap {
+        align-items: flex-start;
+      }
+
+      .product-no-cc { text-align: left; }
+
+      .workflow-steps {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px 16px;
+      }
+
+      .workflow-steps::before { display: none; }
     }
 
     @media (max-width: 480px) {
       .feed-preview { grid-template-columns: 1fr 1fr; }
       .section-header { margin-bottom: 36px; }
-      .what-we-do, .who-for, .feed-section, .waitlist-section { padding: 64px 0; }
+      .what-we-do, .who-for, .feed-section, .waitlist-section, .products-section { padding: 64px 0; }
+
+      .workflow-steps {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .wf-step {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 16px;
+      }
+
+      .wf-num { flex-shrink: 0; margin-bottom: 0; }
+
+      .wf-step-text { display: flex; flex-direction: column; }
     }
   </style>
 </head>
@@ -596,6 +896,10 @@
         </a>
         <div class="nav-cta">
           <a href="https://instagram.com/smart.owner_hq" target="_blank" rel="noopener" class="nav-link">Instagram</a>
+          <a href="#products" class="nav-link" style="display:flex;align-items:center;gap:6px">
+            <span style="width:6px;height:6px;border-radius:50%;background:#14b8a6;display:inline-block;flex-shrink:0"></span>
+            Products
+          </a>
           <a href="#subscribe" class="btn btn-amber">Get free tips</a>
         </div>
       </div>
@@ -812,29 +1116,104 @@
     </div>
   </section>
 
-  <!-- ─── Waitlist ─── -->
-  <section class="waitlist-section" id="product">
+  <!-- ─── Content Brewer HQ Product ─── -->
+  <section class="products-section" id="products">
     <div class="container">
-      <div class="waitlist-box">
-        <div style="display: flex; flex-direction: column; gap: 16px;">
-          <span class="tag">Coming soon</span>
-          <h2 class="section-title">The AI content system for your business</h2>
-          <p class="section-sub">We're building the same content automation system we use internally into a product — so any brand can run a fully autonomous content operation. Join the waitlist to be first.</p>
+
+      <div style="margin-bottom: 32px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <span class="tag">Our Products</span>
+        <span style="font-size: 13px; color: var(--light);">More products coming soon</span>
+      </div>
+
+      <div class="product-card">
+
+        <!-- Founding member ribbon -->
+        <div class="founding-banner">
+          🎉 &nbsp;Launch pricing — 40% off for founding members &nbsp;·&nbsp; Price increases at 100 users
         </div>
-        <form class="waitlist-form" id="waitlist-form" onsubmit="handleSubscribe(event, 'waitlist')">
-          <input
-            class="email-input"
-            type="email"
-            placeholder="your@email.com"
-            required
-            aria-label="Email address for waitlist"
-          />
-          <button class="btn btn-amber btn-lg" type="submit" style="width: 100%; justify-content: center;">Join the waitlist →</button>
-          <div class="form-success" id="waitlist-success" style="text-align: left; max-width: unset; margin: 0;">
-            ✓ You're on the list!
+
+        <!-- Header -->
+        <div class="product-header">
+          <div>
+            <div class="cbhq-badge">
+              <span class="cbhq-badge-dot"></span>
+              Now Live
+            </div>
+            <h2 class="product-name">Content Brewer HQ</h2>
+            <p class="product-tagline">
+              Generate Instagram carousels, LinkedIn posts, and X threads in your brand's exact voice — not generic AI output. Train it once on your tone, goals, and guardrails. Post forever.
+            </p>
+            <div class="platform-badges">
+              <span class="platform-badge">📸 Instagram</span>
+              <span class="platform-badge">💼 LinkedIn</span>
+              <span class="platform-badge">𝕏 X / Twitter</span>
+              <span class="platform-badge">💬 Telegram bot</span>
+            </div>
           </div>
-          <p class="form-note">No commitment. We'll reach out when it's ready.</p>
-        </form>
+
+          <div class="product-cta-wrap">
+            <a href="https://contentbrewerhq.com" target="_blank" rel="noopener" class="btn-teal">
+              Start free trial →
+            </a>
+            <p class="product-no-cc">No credit card required</p>
+            <p class="product-no-cc" style="margin-top:4px">From ₹799 / mo</p>
+          </div>
+        </div>
+
+        <!-- How it works -->
+        <p class="workflow-label">How it works — from zero to posted in under 5 minutes</p>
+        <div class="workflow-steps">
+
+          <div class="wf-step">
+            <div class="wf-num">1</div>
+            <div class="wf-icon">🎙️</div>
+            <div class="wf-step-text">
+              <div class="wf-title">Train your brand voice</div>
+              <div class="wf-desc">Set your brand name, industry, tone of voice, content goals, and topics you never want to touch. One-time setup, takes 5 minutes.</div>
+            </div>
+          </div>
+
+          <div class="wf-step">
+            <div class="wf-num">2</div>
+            <div class="wf-icon">✏️</div>
+            <div class="wf-step-text">
+              <div class="wf-title">Enter a topic</div>
+              <div class="wf-desc">Just type what you want to post about. No prompts, no templates, no copywriting skills required.</div>
+            </div>
+          </div>
+
+          <div class="wf-step">
+            <div class="wf-num">3</div>
+            <div class="wf-icon">⚡</div>
+            <div class="wf-step-text">
+              <div class="wf-title">AI writes in your voice</div>
+              <div class="wf-desc">Get platform-ready content for Instagram, LinkedIn, and X — all matching your exact tone, not sounding like every other brand using AI.</div>
+            </div>
+          </div>
+
+          <div class="wf-step">
+            <div class="wf-num">4</div>
+            <div class="wf-icon">📊</div>
+            <div class="wf-step-text">
+              <div class="wf-title">Score, refine & publish</div>
+              <div class="wf-desc">Every post gets an AI engagement score with improvement tips. Save to your library, tweak if needed, or trigger generation via Telegram on the go.</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Feature pills -->
+        <div class="product-features-row">
+          <span class="product-feature-pill">Brand voice profiles</span>
+          <span class="product-feature-pill">Engagement scoring</span>
+          <span class="product-feature-pill">Multi-platform generation</span>
+          <span class="product-feature-pill">Telegram bot</span>
+          <span class="product-feature-pill">Post library</span>
+          <span class="product-feature-pill">Brand safety guardrails</span>
+          <span class="product-feature-pill">Smart content repurposing</span>
+          <span class="product-feature-pill">Works for any industry</span>
+        </div>
+
       </div>
     </div>
   </section>
@@ -853,12 +1232,12 @@
         <div class="footer-links">
           <a href="https://instagram.com/smart.owner_hq" target="_blank" rel="noopener">Instagram</a>
           <a href="#subscribe">Subscribe</a>
-          <a href="#product">Product waitlist</a>
+          <a href="https://contentbrewerhq.com" target="_blank" rel="noopener">Content Brewer HQ</a>
           <a href="/privacy.html">Privacy</a>
         </div>
       </div>
       <div style="border-top: 1px solid var(--border); margin-top: 32px; padding-top: 24px;">
-        <p class="footer-copy">© 2025 SmartOwner HQ. All rights reserved.</p>
+        <p class="footer-copy">© 2026 SmartOwner HQ. All rights reserved.</p>
       </div>
     </div>
   </footer>
